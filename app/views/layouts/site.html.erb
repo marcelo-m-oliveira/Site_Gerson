@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <title>SiteGerson</title>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900'%>
+    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'site' %>
+    <noscript><%= stylesheet_link_tag 'site_noscript'%></noscript>
+  </head>
+  <body class="is-preload">
+    <div id="wrapper" class="fade-in">
+	<!-- Intro -->
+      <div id="intro">
+        <h1>Bem-Vindo</h1>
+        <p>Servicos disponíveis: <br/>Serviços linguísticos de tradução e interpretação, aulas de Inglês e Português, <br/>
+          consultoria acadêmica, apoio turístico, consultoria no Brasil e Serviços de voluntariado.	
+        </p>
+        <ul class="actions">
+          <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+        </ul>
+      </div>				
+	<!-- Header -->
+      <header id="header">
+      </header>
+	<!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li class="active"><a href="#sobre_mim">Sobre mim</a></li>
+          <li><a href="#meus_serviços" >Meus serviços</a></li>
+          <li><a href="#contatos">Contatos</a></li>
+        </ul>
+        <ul class="icons">
+          <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+          <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+        </ul>
+      </nav>
+      <%= yield %>
+      <!-- Rodapé -->
+      <div id="copyright">
+        <ul>
+          <li>
+            &copy; 2020 - <%= Time.zone.now.year %>
+          </li>
+          <li>
+            Desenvolvido por 
+            <%= link_to '#'  do %>
+              Marcelo M Oliveira
+            <% end %>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            Idioma atual: <%= locale %>
+          </li>
+          <li>
+            <%= link_to 'Português', root_path(locale:'pt=BR') %> |
+            <%= link_to 'Inglês', '/?locale=en' %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <%= javascript_include_tag 'application' %>						
+    <%= javascript_include_tag 'site' %>						
+  </body>
+</html>

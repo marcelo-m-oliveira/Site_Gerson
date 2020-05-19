@@ -1,0 +1,83 @@
+<div id="main">
+<!-- Sobre mim -->
+  <article class="post featured" id="sobre_mim">
+    <header class="major">
+      <h2><a>Sobre mim</h2>
+      <p>Olá, meu nome é Gerson...</p>
+    </header>
+    <a></a>
+  </article>	
+<!-- Serviços -->
+  <article class="post featured" id="meus_serviços">
+    <header class="major">
+      <h2><a>Serviços</h2>
+    </header>
+    <a></a>
+  </article>	
+  <section class="posts">
+    <% @services.each do |service| %>
+      <article>
+        <header>
+          <h2>
+          <a>Serviço:<br /> <%= service.name %> </a>
+          </h2>
+        </header>
+        <p> <%= service.description %> </p>
+      </article>
+    <% end %>
+  </section>
+</div>
+<!-- contatos -->
+<div id="contatos">
+  <footer id="footer">
+    <section>
+        <form method="post" action="#">
+          <div class="fields">
+            <div class="field">
+              <label for="name">Nome completo</label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="text" name="email" id="email" />
+            </div>
+            <div class="field">
+              <label for="servico">Serviço que deseja contratar</label>
+              <%= select("service_id", @service_options, { include_blank: 'Selecione o serviço desejado' }) %>
+            </div>
+            <div class="field">
+              <label for="message">Informações adicionais</label>
+              <textarea name="message" id="message" rows="3"></textarea>
+            </div>
+          </div>
+          <ul class="actions">
+            <li> 
+              <button type="submit" class="button">Envair menssagem </button>
+            </li>
+          </ul>
+        </form>
+    </section>
+    <section class="split contact">
+      <section class="alt">
+        <h3>Address</h3>
+        <p>London E4 6HR</p>
+      </section>
+      <section>
+        <h3>Phone</h3>
+        <p>+06 7848-96093</p>
+      </section>
+      <section>
+        <h3>Email</h3>
+        <p>Gerson.silva@hotmail.co.uk</p>
+      </section>
+      <section>
+        <h3>Social</h3>
+        <ul class="icons alt">
+          <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+          <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+        </ul>
+      </section>
+    </section>
+  </footer>
+</div>
